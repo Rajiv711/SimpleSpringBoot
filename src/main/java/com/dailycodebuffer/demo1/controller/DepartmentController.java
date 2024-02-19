@@ -17,13 +17,25 @@ public Department saveDepartment(@RequestBody Department department){
      return departmentServiceInterface.saveDepartment(department);
 }
   @DeleteMapping("/departments")
-public void deleteDepartment(@RequestBody Department department){
-        System.out.println("Department deleted succefully");
+public String deleteDepartment(@RequestBody Department department){
+
     departmentServiceInterface.deleteColumn(department);
+      return "Department deleted succefully";
 }
+
+@DeleteMapping("/departments/{id}")
+public String deleteDepartmentById(@PathVariable("id") Long departmentId){
+        departmentServiceInterface.deleteDepartment(departmentId);
+        return "Department deleted succefully";
+}
+
 @GetMapping("/departments")
 public List<Department> fetchAllDepartments(){
         return departmentServiceInterface.fetchDepartments();
+}
+@GetMapping("/departments/{id}")
+public Department getDepartmentById(@PathVariable("id") Long departmentId){
+        return departmentServiceInterface.getDepartment(departmentId);
 }
 
 

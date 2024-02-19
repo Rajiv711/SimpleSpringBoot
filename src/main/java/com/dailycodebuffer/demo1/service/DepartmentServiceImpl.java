@@ -28,4 +28,15 @@ public class DepartmentServiceImpl implements DepartmentServiceInterface {
         return departmentRepositoryInterface.findAll();
     }
 
+    @Override
+    public void deleteDepartment(Long departmentId) {
+        departmentRepositoryInterface.deleteById(departmentId);
+    }
+
+    @Override
+    public Department getDepartment(Long departmentId) {
+        return departmentRepositoryInterface.findById(departmentId).get();
+    }
+
+
 }

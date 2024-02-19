@@ -10,4 +10,8 @@ public interface DepartmentServiceInterface {
    public void deleteColumn(Department department);
 
   public List<Department> fetchDepartments();
+
+   public void deleteDepartment(Long departmentId);
+
+   public Department getDepartment(Long departmentId);
 }
