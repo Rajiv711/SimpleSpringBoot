@@ -37,6 +37,10 @@ public List<Department> fetchAllDepartments(){
 public Department getDepartmentById(@PathVariable("id") Long departmentId){
         return departmentServiceInterface.getDepartment(departmentId);
 }
+@PutMapping("/departments/{id}")
+public Department updateDepartment(@PathVariable("id") Long departmentId,@RequestBody Department department){
+        return departmentServiceInterface.updateDepartment(departmentId,department);
+}
 
 
 
